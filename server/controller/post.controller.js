@@ -16,3 +16,15 @@ module.exports.getPosts = (request,response) => {
     .then(res => response.json(res))
     .catch(err => response.status(500).json({message: err}))
 }
+
+module.exports.getPostDetail = (request, response) => {
+    PostController.findOne({_id: request.params.id})
+    .then(res => response.json(res))
+    .catch(err => response.status(500).json({message: err}))
+}
+
+module.exports.upDatePost = (request, response) => {
+    PostController.findOneAndUpdate({_id: request.params.id}, request.body, {new: true})
+    .then(res => response.json(res))
+    .catch(err => response.status(500).json({message: err}))
+}

@@ -12,7 +12,11 @@ const PostSchema = new mongoose.Schema({
     body: {
         required: true,
         type: String,
-        minLength: 200
+        minLength: 50
+    },
+    date: {
+        type: Date,
+        default: Date.now()
     }
 }, {timestamps: true})
 

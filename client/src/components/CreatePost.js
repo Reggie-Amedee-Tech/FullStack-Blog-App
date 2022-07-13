@@ -18,6 +18,10 @@ const CreatePost = (e) => {
       subTitle,
       body
     })
+    setTitle('')
+    setSubtitle('')
+    setBody('')
+    
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
@@ -27,7 +31,7 @@ const CreatePost = (e) => {
       <div className={classes.MidSection}>
         <div className={classes.Container}>
           <div>
-            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" className={classes.Input} placeholder="Title" />
+            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" className={classes.Input} placeholder="Title" style={{marginTop: "20px"}}/>
           </div>
           <div>
             <input value={subTitle} onChange={(e) => setSubtitle(e.target.value)} type="text" className={classes.Input} placeholder="Sub Title" />
