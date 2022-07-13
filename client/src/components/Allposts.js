@@ -18,6 +18,15 @@ const Allposts = () => {
             })
     }, [])
 
+    const deletePost = (postId) => {
+        axios.delete('http://localhost:5002/api/Posts/' + postId)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+
+        return posts.filter(item => getPosts(posts.filter(item => item._id !== postId)))
+        
+    }
+
     return (
         <div>
             {!loaded ? <p>Loading...</p> : posts.map(item => {
@@ -26,7 +35,8 @@ const Allposts = () => {
                         <h1>{item.title}</h1>
                         <h4>{item.date.slice(0, 10)}</h4>
                         <Link to={'/post/' + item._id}>View Post</Link>
-                        <Link to={item._id + '/edit'}>Edit Post</Link>               
+                        <Link to={item._id + '/edit'}>Edit Post</Link> 
+                        <button onClick={() => deletePost(item._id)}>Delete Post</button>              
                         </div>
                     
                 </div>

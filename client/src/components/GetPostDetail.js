@@ -18,6 +18,7 @@ const GetPostDetail = () => {
         .catch(err => console.log(err))
     }, [])
 
+
   return (
     <div>
         <div>

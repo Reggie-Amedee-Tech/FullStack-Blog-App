@@ -28,3 +28,9 @@ module.exports.upDatePost = (request, response) => {
     .then(res => response.json(res))
     .catch(err => response.status(500).json({message: err}))
 }
+
+module.exports.deleteOne = (request, response) => {
+    PostController.deleteOne({_id: request.params.id})
+    .then(deletedUser => response.json(deletedUser))
+    .catch(err => response.status(500).json({message: err}))
+}
