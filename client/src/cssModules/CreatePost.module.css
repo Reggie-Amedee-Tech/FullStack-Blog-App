@@ -5,6 +5,7 @@
 
 .MidSection {
     width: 100%;
+    
 }
 
 .Input {
@@ -13,6 +14,7 @@
     margin: 5px;
     font-size: 1.1rem;
     border-radius: 10px;
+    border: 1px solid transparent;
 }
 
 .Input3 {
@@ -23,16 +25,18 @@
     resize: none;
     font-size: 1.3rem;
     border-radius: 10px;
+    border: 1px solid transparent;
 }
 
 .Container {
     display: flex;
     flex-direction: column;
     max-width: 50%;
-    border: 1px solid black;  
+    border: 3px solid black;  
     margin: auto auto;
-    margin-top: 100px;
+    margin-top: 50px;
     border-radius: 10px;
+    background-color: #B38372;
 }
 
 .ButtonDiv {
@@ -49,5 +53,6 @@
     border-radius: 45%;
     padding: 10px 0;
     margin: 10px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    background-color: #84B3A8;
 }

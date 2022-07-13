@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import classes from '../cssModules/GetPostDetails.module.css'
 import axios from 'axios'
 
 const GetPostDetail = () => {
@@ -20,11 +21,11 @@ const GetPostDetail = () => {
 
 
   return (
-    <div>
-        <div>
-            <h1>{post.title}</h1>
-            <h3>{post.subTitle}</h3>
-            <p>{post.body}</p>
+    <div className={classes.MainDiv}>
+        <div className={classes.Container}>
+            <h1 className={classes.H1}>{post.title}</h1>
+            <h3 className={classes.H3}>{post.subTitle}</h3>
+            <p className={classes.P}>{post.body}</p>
         </div>
     </div>
   )

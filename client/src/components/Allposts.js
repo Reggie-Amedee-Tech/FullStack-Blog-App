@@ -32,11 +32,11 @@ const Allposts = () => {
             {!loaded ? <p>Loading...</p> : posts.map(item => {
                 return <div className={classes.MainDiv}>
                     <div className={classes.Container}>
-                        <h1>{item.title}</h1>
+                        <h1 className={classes.H1}>{item.title}</h1>
                         <h4>{item.date.slice(0, 10)}</h4>
-                        <Link to={'/post/' + item._id}>View Post</Link>
-                        <Link to={item._id + '/edit'}>Edit Post</Link> 
-                        <button onClick={() => deletePost(item._id)}>Delete Post</button>              
+                        <Link to={'/post/' + item._id} className={classes.Link}>View Post</Link>
+                        <Link to={item._id + '/edit'} className={classes.Link}>Edit Post</Link> 
+                        <button onClick={() => deletePost(item._id)} className={classes.Button}>Delete Post</button>              
                         </div>
                     
                 </div>

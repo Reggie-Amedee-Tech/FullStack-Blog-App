@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import classes from '../cssModules/CreatePost.module.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 
 const CreatePost = (e) => {
@@ -8,6 +9,7 @@ const CreatePost = (e) => {
   const [subTitle, setSubtitle] = useState('');
   const [body, setBody] = useState('');
 
+  const navigate = useNavigate()
 
 
   const onClickSubmit = (e) => {
@@ -21,9 +23,13 @@ const CreatePost = (e) => {
     setTitle('')
     setSubtitle('')
     setBody('')
-    
-      .then(res => console.log(res))
+
+      .then(res => {
+        console.log(res)
+        navigate('/allPosts')
+      })
       .catch(err => console.log(err))
+
   }
 
   return (
@@ -31,7 +37,7 @@ const CreatePost = (e) => {
       <div className={classes.MidSection}>
         <div className={classes.Container}>
           <div>
-            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" className={classes.Input} placeholder="Title" style={{marginTop: "20px"}}/>
+            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" className={classes.Input} placeholder="Title" style={{ marginTop: "20px" }} />
           </div>
           <div>
             <input value={subTitle} onChange={(e) => setSubtitle(e.target.value)} type="text" className={classes.Input} placeholder="Sub Title" />
