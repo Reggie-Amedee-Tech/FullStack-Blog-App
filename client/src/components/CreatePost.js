@@ -23,10 +23,11 @@ const CreatePost = (e) => {
     setTitle('')
     setSubtitle('')
     setBody('')
-
+    navigate('/allPosts')
       .then(res => {
+        
         console.log(res)
-        navigate('/allPosts')
+        
       })
       .catch(err => console.log(err))
 

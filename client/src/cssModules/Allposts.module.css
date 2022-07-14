@@ -3,19 +3,29 @@
     margin: 0px;
 }
 
+.SpaceDiv{
+    height: 100vh;
+    
+}
+
+.OuterDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    width: 100%;
+}
+
 .Container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    flex-wrap: wrap;
     align-items: center;
-    max-width: 90%;
-    margin: 0 auto;
     border: 5px solid black;
     width: 30%;
     height: 30vh;
-    margin-bottom: 10px;
     margin-top: 10px;
+    margin-left: 10px;
     background-color: #B38372;
 }
 
